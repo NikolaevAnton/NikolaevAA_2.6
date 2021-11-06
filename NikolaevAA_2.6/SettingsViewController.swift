@@ -27,6 +27,9 @@ class SettingsViewController: UIViewController {
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        redTextFieldOutlet.delegate = self
+        greenTextFieldOutlet.delegate = self
+        blueTextFieldOutlet.delegate = self
         setColor()
     }
     
@@ -34,7 +37,6 @@ class SettingsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultViewController = segue.destination as? ResultViewController else {return}
         resultViewController.color = rgbColor
-        //resultViewController.rgbDrawView(color: rgbColor)
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue){
@@ -79,3 +81,22 @@ class SettingsViewController: UIViewController {
     }
 
 }
+
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let redValue: String = redTextFieldOutlet.text ?? "0.1"
+        let greenValue = greenTextFieldOutlet.text ?? "0.1"
+        let blueValue = blueTextFieldOutlet.text ?? "0.1"
+        
+        redSlider.value = Float(redValue) ?? 0.1
+        greenSlider.value = Float(greenValue) ?? 0.1
+        blueSlider.value = Float(blueValue) ?? 0.1
+        
+        redValueLabel.text = "крс: " + string(from: redSlider)
+        greenValueLabel.text = "зел: " + string(from: greenSlider)
+        blueValueLabel.text = "гол: " + string(from: blueSlider)
+        
+        setColor()
+    }
+}
+
