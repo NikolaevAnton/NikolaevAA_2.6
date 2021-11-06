@@ -10,7 +10,6 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     //MARK: - IB Outlets
-    
     @IBOutlet var settingsView: UIView!
     @IBOutlet var redValueLabel: UILabel!
     @IBOutlet var greenValueLabel: UILabel!
@@ -22,6 +21,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenTextFieldOutlet: UITextField!
     @IBOutlet var blueTextFieldOutlet: UITextField!
     
+    //MARK: - Public Properties
+    var rgbColor: UIColor!
+    
     //MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,12 @@ class SettingsViewController: UIViewController {
     }
     
     //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let resultViewController = segue.destination as? ResultViewController else {return}
+        resultViewController.color = rgbColor
+        //resultViewController.rgbDrawView(color: rgbColor)
+    }
+    
     @IBAction func unwind(for segue: UIStoryboardSegue){
         
     }
@@ -48,14 +56,20 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func rgbConfirmButton() {
+        
+    }
+    
     //MARK: - Private Methods
     private func setColor() {
-        settingsView.backgroundColor = UIColor(
+        rgbColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: 1
-        )
+            )
+        settingsView.backgroundColor = rgbColor
     }
     
     
@@ -65,4 +79,3 @@ class SettingsViewController: UIViewController {
     }
 
 }
-
