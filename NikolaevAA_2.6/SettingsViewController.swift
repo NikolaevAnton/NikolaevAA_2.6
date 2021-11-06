@@ -45,12 +45,12 @@ class SettingsViewController: UIViewController {
                 ResultViewController else {return}
         resultViewController.colorRGB = rgbColor
         resultViewController.delegate = self
-        
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue){
         
     }
+    
     
     //MARK: - IB Actions
     @IBAction func rgbSliders(_ sender: UISlider) {
@@ -118,4 +118,3 @@ extension SettingsViewController: ColorDelegate {
         view.backgroundColor = color
     }
 }
-

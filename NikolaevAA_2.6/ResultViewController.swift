@@ -17,5 +17,5 @@ class ResultViewController: UIViewController{
         super.viewDidLoad()
         delegate.drawViewColorRGB(color: colorRGB)
     }
+    
 }
-
