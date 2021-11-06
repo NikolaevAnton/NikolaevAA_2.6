@@ -7,25 +7,15 @@
 
 import UIKit
 
-protocol ViewColorDelegate {
-    func rgbDrawView(color: UIColor)
-}
-
 class ResultViewController: UIViewController{
     
     @IBOutlet var backGroundView: UIView!
-    
-    var color: UIColor!
+    var delegate: ColorDelegate!
+    var colorRGB: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(color!)
-        rgbDrawView(color: color)
+        delegate.drawViewColorRGB(color: colorRGB)
     }
 }
 
-extension ResultViewController: ViewColorDelegate {
-    func rgbDrawView(color: UIColor) {
-        backGroundView.backgroundColor = color
-    }
-}

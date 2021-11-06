@@ -31,7 +31,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Done"/>
                                 <connections>
                                     <action selector="rgbConfirmButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="oh3-2G-X4O"/>
-                                    <segue destination="xcR-Bo-O27" kind="presentation" modalPresentationStyle="fullScreen" id="bKW-aY-CE4"/>
+                                    <segue destination="kDW-jx-qzj" kind="presentation" modalPresentationStyle="fullScreen" id="vdp-al-2ms"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="Wd4-rU-XeT">
@@ -158,30 +158,13 @@
                     <view key="view" contentMode="scaleToFill" id="TfR-92-bhg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJY-kP-iuc">
-                                <rect key="frame" x="183" y="816" width="48" height="31"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Exit"/>
-                                <connections>
-                                    <action selector="rgbConfirmButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="gxF-fa-G3S"/>
-                                    <segue destination="FOd-Od-3mj" kind="unwind" unwindAction="unwindFor:" id="967-Mr-FWP"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AXN-ox-M8e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="jJY-kP-iuc" firstAttribute="centerX" secondItem="TfR-92-bhg" secondAttribute="centerX" id="8qU-Yh-yXh"/>
-                            <constraint firstItem="AXN-ox-M8e" firstAttribute="bottom" secondItem="jJY-kP-iuc" secondAttribute="bottom" constant="15" id="mRI-u1-6DR"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WKx-hx-T58">
                         <barButtonItem key="rightBarButtonItem" title="выйти" id="sjZ-gT-4oj">
                             <connections>
-                                <segue destination="FOd-Od-3mj" kind="unwind" unwindAction="unwindFor:" id="dDV-ZS-Hux"/>
+                                <segue destination="FOd-Od-3mj" kind="unwind" unwindAction="unwindFor:" id="mQ3-aR-7bu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -192,7 +175,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vue-Kv-L7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="FOd-Od-3mj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="846" y="68"/>
+            <point key="canvasLocation" x="1594" y="68"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cUo-kp-3mB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kDW-jx-qzj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nD2-eR-kkk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xcR-Bo-O27" kind="relationship" relationship="rootViewController" id="uli-BY-YXg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ib-Am-Pav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="68"/>
         </scene>
     </scenes>
     <resources>
